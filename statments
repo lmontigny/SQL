@@ -3,3 +3,39 @@ SELECT DISTINCT rental_rate FROM film;
 
 SELECT * FROM customer
 WHERE store_id = 1 AND address_id > 5
+
+SELECT COUNT(DISTINCT(amount)) FROM payment
+
+SELECT * FROM customer
+LIMIT 5;  //limit to the first 5 rows
+
+SELECT * FROM customer
+ORDER BY customer_id ASC //sort ASC or DESC, ASC by default
+
+SELECT first_name FROM customer
+ORDER BY last_name; //can be unaccepted by other SQl engine for example MySQL
+
+SELECT customer_id, amount FROM payment
+WHERE amount BETWEEN 8 AND 9
+
+SELECT customer_id, amount FROM payment
+WHERE amount NOT BETWEEN 8 AND 9
+
+SELECT customer_id, rental_id, return_date
+FROM rental
+WHERE customer_id IN (1,2) //customer_id=1,=2
+ORDER BY return_date DESC
+
+SELECT customer_id, rental_id, return_date
+FROM rental
+WHERE customer_id NOT IN (1,2)
+ORDER BY return_date DESC
+
+SELECT * FROM actor
+WHERE first_name LIKE 'Vi%' // pattern matching %er%
+
+SELECT * FROM customer
+WHERE first_name LIKE '_her%' // _ count as a char (only one)
+
+SELECT * FROM customer
+WHERE first_name ILIKE 'BaR%' //case insensitive
