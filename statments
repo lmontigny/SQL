@@ -41,3 +41,7 @@ SELECT * FROM customer
 WHERE first_name ILIKE 'BaR%' //case insensitive
 
 SELECT SUM(amount) AS total FROM payment
+
+SELECT customer.customer_id, first_name, last_name, email, amount, payment_date FROM customer
+INNER JOIN payment ON payment.customer_id = customer.customer_id
+ORDER BY customer.customer_id
