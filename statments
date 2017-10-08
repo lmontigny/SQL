@@ -39,3 +39,5 @@ WHERE first_name LIKE '_her%' // _ count as a char (only one)
 
 SELECT * FROM customer
 WHERE first_name ILIKE 'BaR%' //case insensitive
+
+SELECT SUM(amount) AS total FROM payment
