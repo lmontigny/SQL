@@ -79,11 +79,3 @@ SELECT COUNT(film) from film
 WHERE title LIKE 'J%'
 
 
-// Join table
-SELECT customer.customer_id, first_name, last_name, email, amount, payment_date FROM customer
-INNER JOIN payment ON payment.customer_id = customer.customer_id
-ORDER BY customer.customer_id
-
-SELECT film.film_id, film.title, inventory_id FROM film 
-LEFT OUTER JOIN inventory ON inventory.film_id = film.film_id
-WHERE inventory.film_id IS NULL
