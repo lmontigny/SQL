@@ -50,32 +50,5 @@ SELECT MIN(amount) FROM payment
 SELECT SUM(amount) FROM payment
 
 
-// Groupy by
-SELECT customer_id, SUM(amount)
-FROM payment
-GROUP BY customer_id
-
-SELECT rating, COUNT(rating) FROM film
-GROUP BY rating
-
-SELECT customer_id, SUM(amount)
-FROM payment
-GROUP BY customer_id
-HAVING SUM(amount) > 200 //filtering of the aggregate function
-
-SELECT rating, AVG(rental_rate)
-FROM film
-WHERE rating IN ('R', 'G', 'PG')
-GROUP BY rating
-HAVING AVG(rental_rate)<3
-
-exo
-SELECT customer_id, SUM(amount) FROM payment
-WHERE staff_id = 2
-GROUP BY customer_id
-HAVING SUM(amount) > 110
-
-SELECT COUNT(film) from film
-WHERE title LIKE 'J%'
 
 
