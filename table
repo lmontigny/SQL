@@ -1,0 +1,12 @@
+DROP TABLE IF EXISTS link;
+// Add column
+ALTER TABLE link ADD COLUMN active boolean
+// Rename table
+ALTER TABLE link RANEMAE TO new_table_name
+// Check constraint
+CREATE TABLE Persons (
+    ID int NOT NULL,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int CHECK (Age>=18)
+);
